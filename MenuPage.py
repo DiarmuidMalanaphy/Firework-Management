@@ -209,14 +209,10 @@ class MenuPage():
                 else:
                     pass
             
-            try:
+            if isinstance(self.menu_labels[selected_index].redirect, MenuPage):
                 self.defocus()
                 self.menu_labels[selected_index].redirect.set_focus(self.state, previous_page = self)
-                
-            except:
-                self.set_focus(self.state)
-                pass
-                # self.set_focus(self.state, previous_page = self)
+            
             self.text_label_text = " "
             
             
